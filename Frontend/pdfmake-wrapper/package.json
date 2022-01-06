@@ -1,0 +1,66 @@
+{
+  "_from": "pdfmake-wrapper",
+  "_id": "pdfmake-wrapper@2.1.2",
+  "_inBundle": false,
+  "_integrity": "sha512-oApp2QP6ST3cdPvTQM3XrV2c0tZCNkrNhsuSz/1MQJ0F3X2q4Om3b5uGh1In3K5ofElPV02z8U7vTcvExBgN9Q==",
+  "_location": "/pdfmake-wrapper",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "pdfmake-wrapper",
+    "name": "pdfmake-wrapper",
+    "escapedName": "pdfmake-wrapper",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/pdfmake-wrapper/-/pdfmake-wrapper-2.1.2.tgz",
+  "_shasum": "d5a739b6e5801bb0359ca6b127103658c1ccd19c",
+  "_spec": "pdfmake-wrapper",
+  "_where": "C:\\Users\\Laura\\OneDrive\\Escritorio\\U\\´software\\proyecto_software",
+  "author": {
+    "name": "Insomniocode",
+    "email": "insomniocode@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/Lugriz/pdfmake-wrapper/issues",
+    "email": "insomniocode@gmail.com"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Nestor Lazcano",
+      "email": "nestornes11@gmail.com"
+    }
+  ],
+  "deprecated": false,
+  "description": "Wrapper based on pdfmake library to generate PDF documents in an easy and readable way.",
+  "homepage": "https://github.com/Lugriz/pdfmake-wrapper",
+  "keywords": [
+    "pdfmake",
+    "pdfmake wrapper",
+    "pdf",
+    "generate pdf",
+    "pdf",
+    "document",
+    "pdf-generation",
+    "typescript",
+    "javascript"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "pdfmake-wrapper",
+  "peerDependencies": {
+    "pdfmake": "^0.1.68"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lugriz/pdfmake-wrapper.git"
+  },
+  "version": "2.1.2"
+}

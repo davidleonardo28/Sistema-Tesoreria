@@ -1,0 +1,143 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  display: flex;
+  height: 370vh;
+  justify-content: center;
+  align-items: center;
+  background:  linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.container{
+  max-width: 1200px;
+  width: 100%;
+  background: #f1f1f1;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+
+
+
+.ingresoForm{
+  width: 1110px;
+  background: #fff;
+  padding: 20px 30px;
+  margin: auto;
+  border-radius: 'calibri';
+}
+
+.ingresoForm h3{
+  font-size: 22px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+.datos{
+  outline: none;
+  width: 100%;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+}
+
+.final {
+  display: flex;
+  background: #fff;
+  float: right;
+}
+
+.final .titulo {
+  flex: 1;
+  outline: none;
+  background: #fff;
+  margin: 22px;
+  border: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  text-align: right;
+}
+
+.final .valorFinal {
+  flex: 1;
+  outline: none;
+  background: #fff;
+  border: 0;
+  margin: 22px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+}
+
+.final .x {
+  background: #fff;
+}
+
+.ingresoForm .boton{
+  margin: 20px 0 12px 0;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  padding: 12px;
+}
+
+.ingresoForm span{
+  background: #fff;
+}
+
+.ingresoForm p{
+  background: #fff;
+}
+
+.ingresoForm textarea{
+  resize: none;
+}
+
+@media (max-width: 584px){
+  .container{
+      max-width: 100%;
+  }
+}
+
+.alert-danger {
+  color: #721c24;
+  background: #f8d7da;
+  border-color: #f5c6cb;
+  margin-bottom: 5px;
+}
+
+.container-error-message {
+  padding: 3px;
+}
+
+.valorFinal .datos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.boton{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  background:  linear-gradient(135deg, #71b7e6, #9b59b6);;
+}

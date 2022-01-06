@@ -1,0 +1,66 @@
+<header class="header">
+  <h1>Cuentas Bancarias</h1>
+</header>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="id_cuenta">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Id</th>
+    <td mat-cell *matCellDef="let element">{{ element.id_cuenta }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="num_cuenta">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Número de cuenta</th>
+    <td mat-cell *matCellDef="let element">{{ element.num_cuenta }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="nombre_cuenta">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">
+      Nombre cuenta
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.nombre_cuenta }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="saldo_cuenta">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Saldo</th>
+    <td mat-cell *matCellDef="let element">{{ element.saldo_cuenta | currency: 'COP ' }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="pais_cuenta">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Pais</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.pais_cuenta }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Acción</th>
+    <td mat-cell *matCellDef="let element" style="text-align: center">
+      <button (click)="actualizar(element)" type="submit" [disabled]="element.estado_emp">
+        Eliminar
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+<div>
+  <button class="botones boton">
+    <mat-icon><img src="https://www.svgrepo.com/show/33860/list.svg"> </mat-icon>
+    <span><a class="volver" href="http://localhost:4200/AgregarCuenta">Crear nueva cuenta</a></span>
+  </button>
+</div>
+<div>
+  <button class="botones boton">
+    <span> <a class="volver">
+        <input type="button" value="Generar un PDF" (click)="generarPDF()">
+      </a> </span>
+  </button>
+</div>
+<div>
+  <button class="botones boton">
+    <mat-icon><img src="https://www.svgrepo.com/show/33860/list.svg"> </mat-icon>
+    <span><a class="volver" href="http://localhost:4200/admin">Volver al Menu</a></span>
+  </button>
+</div>

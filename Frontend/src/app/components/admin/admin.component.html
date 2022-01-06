@@ -1,0 +1,79 @@
+<div class="example-container">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a routerLink="/login" routerLinkActive="active">
+      <button mat-button>Sign Out</button>
+    </a>
+    <h1 class="example-app-name">Menu Administrador</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <mat-sidenav #snav>
+      <mat-nav-list>
+        <a mat-list-item href="http://localhost:4200/verUsuario">
+          <mat-icon class="example-tab-icon"
+            ><img src="https://www.svgrepo.com/show/17679/user.svg"
+          /></mat-icon>
+          Ver Usuario</a
+        >
+        <a mat-list-item href="http://localhost:4200/verMovimientos">
+          <mat-icon class="example-tab-icon"
+            ><img src="https://www.svgrepo.com/show/17679/user.svg"
+          /></mat-icon>
+          Ver Movimientos</a
+        >
+        <a mat-list-item href="http://localhost:4200/registro">
+          <mat-icon class="example-tab-icon"
+            ><img
+              src="https://www.svgrepo.com/show/290079/users.svg" /></mat-icon
+          > Registrar Empleados</a
+        >
+        <a mat-list-item href="http://localhost:4200/ingreso">
+          <mat-icon class="example-tab-icon"
+            ><img
+              src="https://www.svgrepo.com/show/14570/account-balance.svg" /></mat-icon
+          > Nuevo Ingreso</a
+        >
+        <a mat-list-item href="http://localhost:4200/gasto">
+          <mat-icon class="example-tab-icon"
+            ><img src="https://www.svgrepo.com/show/14570/account-balance.svg"
+          /></mat-icon>
+           Nuevo Gasto</a
+        >
+        <a mat-list-item href="http://localhost:4200/AgregarCuenta">
+          <mat-icon
+            ><img
+              src="https://www.svgrepo.com/show/25655/bank-card.svg" /></mat-icon
+          > Agregar Cuentas</a
+        >
+        <a mat-list-item href="http://localhost:4200/ConciliacionBancaria">
+          <mat-icon class="example-tab-icon"
+            ><img
+              src="https://www.svgrepo.com/show/259173/bank.svg" /></mat-icon
+          > Conciliacion Bancaria</a
+        >
+        <a mat-list-item href="http://localhost:4200/cuentasBancariasDOS">
+          <mat-icon class="example-tab-icon"
+            ><img
+              src="https://www.svgrepo.com/show/259173/bank.svg" /></mat-icon
+          > Cuenta Bancaria</a
+        >
+        <a mat-list-item href="http://localhost:4200/listaConciliacion">
+          <mat-icon class="example-tab-icon"
+            ><img
+              src="https://www.svgrepo.com/show/259173/bank.svg" /></mat-icon
+          > Lista Concilaciones</a
+        >
+        <a mat-list-item href="http://localhost:4200/grafico1">
+          <mat-icon class="example-tab-icon"
+            ><img
+              src="https://www.svgrepo.com/show/259173/bank.svg" /></mat-icon
+          > Gráficos</a
+        >
+      </mat-nav-list>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div>
+<body></body>

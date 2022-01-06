@@ -1,0 +1,157 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  display: flex;
+  height: 180vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background:  linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+.container{
+  max-width: 1000px;
+  width: 100%;
+  background: #f1f1f1;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+
+.general{
+  max-width: 1000px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+
+.permisos{
+  max-width: 1000px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+
+.general .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.general .title::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background:  linear-gradient(135deg, #71b7e6, #9b59b6);;
+}
+
+.permisos .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.permisos .title::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background:  linear-gradient(135deg, #71b7e6, #9b59b6);;
+}
+
+.general .datos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.permisos .datos{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+.datos .input-box{
+  margin: 20px 0 12px 0;
+  width: calc(100% /2 - 20px);
+}
+
+.datos .input-box .detalles{
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.datos .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+}
+
+.datos .input-box select{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+}
+
+.botones{
+  height: 45px;
+  margin: 45px 0;
+}
+
+.botones input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  background:  linear-gradient(135deg, #71b7e6, #9b59b6);;
+}
+
+.botones input:hover{
+  background:  linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+.botones .boton{
+  margin: 20px 0 12px 0;
+  width: 100%;
+}
+
+@media (max-width: 584px){
+  .container{
+      max-width: 100%;
+  }
+}
+.alert-danger {
+  color: #721c24;
+  background: #f8d7da;
+  border-color: #f5c6cb;
+  margin-bottom: 5px;
+}
+
+.container-error-message {
+  padding: 3px;
+}

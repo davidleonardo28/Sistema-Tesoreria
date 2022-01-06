@@ -1,0 +1,114 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../img/bg.jpeg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+    z-index: -1;
+  }
+
+  .nameTable {
+    color: black;
+    font-family: "Krub", sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    background-color:snow;
+  }
+  
+  table {
+    width: 100%;
+    
+  }
+  .example-tab-icon {
+    margin-right: 10px;
+    z-index: 1;
+  }
+  
+  th {
+    width: 10px;
+    text-align: right;
+  }
+  table,
+  th,
+  td {
+  
+    border: 2px solid black;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  .pointer {
+    cursor: pointer;
+  }
+  .navcolor {
+    color: black;
+    font-family: "Krub", sans-serif;
+    font-size: medium;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+
+  .boton{
+    margin: 20px 0 12px 0;
+    width: 100%;
+    outline: none;
+    color: rgb(19, 18, 18);
+    border: 0ch #75818a 0cm;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 2.5rem;
+    letter-spacing: 1px;
+    padding: 12px;
+    background-color:#1199af;
+    }
+    
+    .botones{
+      height: 50px;
+      margin: 45px 0;
+    }
+    .volver{
+      color: #ffffff;
+      justify-content: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 23px;
+      text-decoration: none;
+      padding-left: 0.5rem;
+      text-transform: uppercase;
+      padding-top: 0.5rem;
+    }
+   
+    
+    .botones input:hover{
+      background:  linear-gradient(-135deg, #71b7e6, #9b59b6);
+    }
+    
+    .botones{
+      margin: 20px 0 12px 0;
+      width: 100%;
+     
+    }
+  
+    
+    .ver{
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 700;
+      font-size: medium;
+  
+    }
+  
+    input{
+      width: 10rem;
+      height: 1.5rem;
+      text-decoration: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-transform: uppercase;
+      border-radius: 5px;
+      padding-bottom: 10px;
+    }
+  
+  
+  

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Gasto</title>
+</head>
+
+<body>
+
+    <h1>Nuevo Gasto</h1>
+
+    <form class="form-register">
+
+        <h3>Informacion General</h3>
+
+        <span>Numero Ingreso</span>
+        <input class="datos" type="text" name="nIngreso" placeholder="Numero Ingreso">
+
+        <span>Fecha</span>
+        <input class="datos" type="date" name="fecha">
+
+        <span>Beneficiario</span>
+        <select class="datos" name="beneficiario">
+            <option value="0">Seleccionar</option>
+        </select>
+
+        <span>Cuenta Bancaria</span>
+        <select class="datos" name="cuentaBancaria">
+            <option value="0">Seleccionar</option>
+        </select>
+
+        <span>Metodo de Pago</span>
+        <select class="datos" name="metodoPago">
+            <option value="0">Seleccionar</option>
+        </select>
+
+        <span>Notas Adicionales</span>
+        <textarea class="datos" name="notasAdicionales" id="" cols="30" rows="10"></textarea>
+
+
+        <h3>Cuenta Contable</h3>
+
+        <span>Concepto</span>
+        <select class="datos" name="Concepto">
+            <option value="0">Seleccionar</option>
+        </select>
+
+        <span>Valor</span>
+        <input class="datos" type="text" name="valor" placeholder="">
+
+        <span>Impuesto (IVA)</span>
+        <input class="datos" type="text" name="valor" placeholder="">
+
+        <span>Cantidad</span>
+        <input class="datos" type="text" name="valor" placeholder="">
+
+        <span>Notas Adicionales</span>
+        <textarea class="datos" name="notasAdicionales" id="" cols="30" rows="10"></textarea>
+
+
+        <h3>Retencion</h3>
+
+        <span>Tipo</span>
+        <select class="datos" name="tipo">
+            <option value="0">Seleccionar</option>
+        </select>
+
+        <span>Base</span>
+        <input class="datos" type="text" name="valor" placeholder="">
+
+        <span>Valor</span>
+        <input class="datos" type="text" name="valor" placeholder="">
+
+        <p>Subtotal $</p>
+        <p>IVA $</p>
+        <p>Total $</p>
+
+        <input class="boton" type="submit" value="Guardar">
+
+        <input class="boton" type="submit" value="Cancelar">
+
+    </form>
+</body>
+
+</html>

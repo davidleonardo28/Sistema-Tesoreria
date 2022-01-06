@@ -1,0 +1,178 @@
+<body>
+    <div class="container">
+        <h1> Nuevo Ingreso </h1>
+        <div class="general">
+            <form class="ingresoForm" [formGroup]="ingresoForm" (ngSubmit)="onSaveForm()">
+
+                <h3>Información General</h3>
+
+                <span>Número Movimiento</span>
+                <input class="datos" type="number" [disabled]="true" [value]='numMov()'>
+
+                <span>Fecha</span>
+                <input class="datos" type="date" name="fecha" formControlName="fecha">
+                <div class="alert-danger" *ngIf="fecha.invalid && (fecha.dirty || fecha.touched)">
+                    <div class="container-error-message" *ngIf="fecha.errors?.required">
+                        La fecha es requerida.
+                    </div>
+                </div>
+
+
+                <span>Beneficiario</span>
+                <select class="datos" formControlName="beneficiario" (change)="changeBeneficiario($event)">
+                    <option [value]="benef.id_benef" *ngFor="let benef of listaBenef">
+                        {{benef.nombre_benef}}
+                    </option>
+                </select>
+
+                <span>Cuenta Bancaria</span>
+                <select class="datos" name="cuentaBancaria" formControlName="cuentaBancaria"
+                    (change)="changeCuenta($event)">
+                    <option *ngFor="let account of listaCuenta" [value]="account.id_cuenta">{{account.nombre_cuenta}}
+                    </option>
+                </select>
+                <div class="alert-danger"
+                    *ngIf="cuentaBancaria.invalid && (cuentaBancaria.dirty || cuentaBancaria.touched)">
+                    <div class="container-error-message" *ngIf="cuentaBancaria.errors?.required">
+                        Por favor seleccione una cuenta bancaria.
+                    </div>
+                </div>
+
+
+                <span>Método de Pago</span>
+                <select class="datos" name="metodoPago" formControlName="metodoPago"
+                    (change)="changeMetodoPago($event)">
+                    <option *ngFor="let payment of listaMetodo" [value]="payment.id_pago">{{payment.nombre_pago}}
+                    </option>
+                </select>
+                <div class="alert-danger" *ngIf="metodoPago.invalid && (metodoPago.dirty || metodoPago.touched)">
+                    <div class="container-error-message" *ngIf="metodoPago.errors?.required">
+                        Por favor seleccione un método de pago.
+                    </div>
+                </div>
+
+                <span>Notas Adicionales</span>
+                <textarea class="datos" formControlName="notasAdicionales" id="" cols="30" rows="10"></textarea>
+
+                <span formControlName='num' [hidden]='estado'>Número de Transacción</span>
+                <input class="datos" type="text" name="valor" formControlName="extra" [hidden]='estado'>
+                <div class="alert-danger" *ngIf="extra.invalid && (extra.dirty || extra.touched)">
+                    <div class="container-error-message"
+                        *ngIf="(extra.dirty || extra.touched) && extra.invalid && extra.errors?.pattern">
+                        Utilice un formato que coincida con el solicitado.
+                    </div>
+                </div>
+
+
+                <h3>Cuenta Contable</h3>
+
+                <span>Concepto</span>
+                <select class="datos" name="Concepto" formControlName="concepto" (change)="changeConcepto($event)">
+                    <option *ngFor="let concept of listaConcepto" [value]="concept.id_concepto">
+                        {{concept.nombre_concepto}}
+                    </option>
+                </select>
+                <div class="alert-danger" *ngIf="concepto.invalid && (concepto.dirty || concepto.touched)">
+                    <div class="container-error-message" *ngIf="concepto.errors?.required">
+                        Por favor seleccione un concepto de cuenta contable.
+                    </div>
+                </div>
+
+                <span>Valor</span>
+                <input class="datos" type="text" name="valor" formControlName="valor_concepto">
+                <div class="alert-danger"
+                    *ngIf="valor_concepto.invalid && (valor_concepto.dirty || valor_concepto.touched)">
+                    <div class="container-error-message" *ngIf="valor_concepto.errors?.required">
+                        Por favor ingrese un valor para el concepto.
+                    </div>
+                    <div class="container-error-message"
+                        *ngIf="(valor_concepto.dirty || valor_concepto.touched) && valor_concepto.invalid && valor_concepto.errors?.pattern">
+                        Utilice un formato que coincida con el solicitado
+                    </div>
+                </div>
+
+                <span>Impuesto</span>
+                <select class="datos" name="valor" formControlName="impuesto" (change)="changeImpuesto($event)">
+                    <option *ngFor="let tax of listaImpuesto" [value]="tax.id_impuesto">{{tax.nombre_imp}}</option>
+                </select>
+                <div class="alert-danger" *ngIf="impuesto.invalid && (impuesto.dirty || impuesto.touched)">
+                    <div class="container-error-message" *ngIf="impuesto.errors?.required">
+                        Por favor seleccione un impuesto.
+                    </div>
+                </div>
+
+                <span>Cantidad</span>
+                <input class="datos" type="text" name="valor" formControlName="cantidad">
+                <div class="alert-danger" *ngIf="cantidad.invalid && (cantidad.dirty || cantidad.touched)">
+                    <div class="container-error-message" *ngIf="cantidad.errors?.required">
+                        Por favor ingrese una cantidad.
+                    </div>
+                    <div class="container-error-message"
+                        *ngIf="(cantidad.dirty || cantidad.touched) && cantidad.invalid && cantidad.errors?.pattern">
+                        Utilice un formato que coincida con el solicitado
+                    </div>
+                </div>
+
+                <span>Notas Adicionales</span>
+                <textarea class="datos" formControlName="notasAdicionales2" id="" cols="30" rows="10"></textarea>
+
+
+                <h3>Retencion</h3>
+
+
+                <span>Tipo</span>
+                <select class="datos" name="tipo" formControlName="tipoRetencion" (change)="changeRetencion($event)">
+                    <option *ngFor="let retencion of listaRetencion" [value]="retencion.id_retencion">
+                        {{retencion.nombre_retr}}
+                    </option>
+                </select>
+                <div class="alert-danger"
+                    *ngIf="tipoRetencion.invalid && (tipoRetencion.dirty || tipoRetencion.touched)">
+                    <div class="container-error-message" *ngIf="tipoRetencion.errors?.required">
+                        Por favor seleccione un tipo de retención.
+                    </div>
+                </div>
+
+                <div class="parte_final">
+                    <div class="final" style="margin-top: 30px;">
+
+                        <div class="x">
+                            <input class="titulo" type="text" value="Subtotal">
+                        </div>
+                        <div class="x">
+                            <input class="valorFinal" type="text" formControlName="subtotal">
+                        </div>
+                    </div>
+                    <div class="final">
+                        <div class="x">
+                            <input class="titulo" type="text" value="Impuesto">
+                        </div>
+                        <div class="x">
+                            <input class="valorFinal" type="text" formControlName="valorImpuesto">
+                        </div>
+                    </div>
+                    <div class="final">
+                        <div class="x">
+                            <input class="titulo" type="text" value="Retención">
+                        </div>
+                        <div class="x">
+                            <input class="valorFinal" type="text" formControlName="valorRetencion">
+                        </div>
+                    </div>
+                    <div class="final">
+                        <div class="x">
+                            <input class="titulo" type="text" value="Total">
+                        </div>
+                        <div class="x">
+                            <input class="valorFinal" type="text" formControlName="total">
+                        </div>
+                    </div>
+                </div>
+
+                <input class="boton" type="submit" value="Guardar" (click)="guardar()">
+                <a href="http://localhost:4200/admin"><input class="boton" type="button" value="Volver al Menú"></a>
+
+            </form>
+        </div>
+    </div>
+</body>

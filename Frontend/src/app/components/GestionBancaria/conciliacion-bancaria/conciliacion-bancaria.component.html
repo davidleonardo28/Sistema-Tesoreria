@@ -1,0 +1,60 @@
+<header class="header">
+  <h1>Lista de conciliaciones bancarias</h1>
+</header>
+
+<button mat-raised-button color="primary">Primary</button>
+<button mat-raised-button color="primary">Descargar</button>
+<!--<a mat-button href="https://www.google.com/" target="_blank">Link</a>-->
+
+
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="numero">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Numero</th>
+    <td mat-cell *matCellDef="let element">{{ element.id_nivel }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="fecha">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Fecha</th>
+    <td mat-cell *matCellDef="let element">{{ element.id_fun }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Saldo final">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">
+      Saldo final
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.estado_emp }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Ingresos Bancatios">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Ingresos Bancatios</th>
+    <td mat-cell *matCellDef="let element">{{ element.contrasena_emp }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="Gastos bancarios">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Gastos bancarios</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.tipo_documento_emp }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Acción</th>
+    <td mat-cell *matCellDef="let element" style="text-align: center">
+      <button
+        (click)="actualizar(element)"
+        type="submit"
+        [disabled]="element.estado_emp"
+      >
+        Desbloquear
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+
+

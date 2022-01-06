@@ -1,0 +1,100 @@
+.form-Agregar {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-form-Ecuacion {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  font-size: 1.5rem;
+}
+
+td {
+  padding-right: 8px;
+}
+.card {
+  border: 1px solid black;
+  padding-top: 2rem;
+  margin: 4rem 4rem;
+}
+h1 {
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 4rem;
+  padding-top: 2rem;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+  width: 20rem;
+}
+
+.example-events {
+  height: 200px;
+  border: 1px solid #555;
+  overflow: auto;
+}
+
+.flexbox-container {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.flexbox-container > div {
+  width: 50%;
+  padding: 10px;
+}
+
+.flexbox-container > div:first-child {
+  margin-right: 25rem;
+}
+.example-full-width1 {
+  font-size: medium;
+  height: 2rem;
+  width: 28rem;
+}
+
+.example-user-input {
+  margin-right: 8px;
+}
+
+.alert-danger {
+  color: #721c24;
+  background: #f8d7da;
+  border-color: #f5c6cb;
+  margin-bottom: 5px;
+}
+
+.container-error-message {
+  padding: 3px;
+}
+
+.boton1 {
+  background-color: #0097A7;
+  color: #ffff;
+  margin-top: .5rem;
+  padding: .5rem 3rem;
+  border-radius: 5px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border:none;
+}
+.boton1:hover{
+  cursor: pointer;
+}
+
+.enviar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5rem;
+}

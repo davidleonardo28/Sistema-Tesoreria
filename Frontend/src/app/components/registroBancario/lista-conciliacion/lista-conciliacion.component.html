@@ -1,0 +1,69 @@
+<header class="header">
+
+  <h1>Lista de conciliaciones bancarias</h1>
+</header>
+
+
+
+
+
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="id_conciliacion">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">ID conciliacion</th>
+    <td mat-cell *matCellDef="let element">{{ element.id_conciliacion }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="fecha_final">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Fecha final</th>
+    <td mat-cell *matCellDef="let element">{{ element.fecha_final | date: 'shortDate'}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="saldo_extracto">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">
+      Saldo extracto
+    </th>
+    <td mat-cell *matCellDef="let element">{{ element.saldo_extracto | currency: 'COP ' }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="total_ingresos">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Ingresos totales</th>
+    <td mat-cell *matCellDef="let element">{{ element.total_ingresos | currency: 'COP ' }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="saldo_final">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Saldo final</th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.saldo_final | currency: 'COP ' }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="id_cuenta">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">ID cuenta</th>
+    <td mat-cell *matCellDef="let element">{{ element.id_cuenta }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="total_gastos">
+    <th mat-header-cell *matHeaderCellDef style="text-align: center">Total Gastos</th>
+    <td mat-cell *matCellDef="let element">{{ element.total_gastos | currency: 'COP ' }}</td>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+<div>
+  <button class="botones boton">
+    <span> <a class="volver">
+        <input type="button" value="Generar un PDF" (click)="generarPDF()">
+      </a> </span>
+  </button>
+</div>
+<div>
+  <button class="botones boton">
+    <mat-icon><img src="https://www.svgrepo.com/show/33860/list.svg"> </mat-icon>
+    <span><a class="volver" href="http://localhost:4200/admin">Volver al Menu</a></span>
+  </button>
+</div>

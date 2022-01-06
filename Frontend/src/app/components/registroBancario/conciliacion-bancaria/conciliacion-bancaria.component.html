@@ -1,0 +1,167 @@
+<h1>Conciliación Bancaria</h1>
+
+
+
+<mat-card class="card sombra">
+  <form class="form-Conciliacion" [formGroup]="ConciliacionBancaria" (ngSubmit)="onSaveForm()">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>SRP Tecnology</mat-label>
+      <input matInput disabled value="SRP Tecnology">
+    </mat-form-field>
+    <div class="flexbox-container">
+      <div>
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Cuenta Bancaria</mat-label>
+            <mat-select matInput class="datos" name="cuentaBancaria" formControlName="CuentaBancaria">
+              <mat-option *ngFor="let account of listaCuenta" [value]="account.id_cuenta">{{account.nombre_cuenta}}
+              </mat-option>
+            </mat-select>
+            <div class="alert-danger"
+              *ngIf="CuentaBancaria.invalid && (CuentaBancaria.dirty || CuentaBancaria.touched)">
+              <div class="container-error-message" *ngIf="CuentaBancaria.errors?.required">
+                Cuenta Bancaria requerida.
+              </div>
+
+            </div>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Fecha Actual</mat-label>
+            <input matInput type="text" formControlName="fechaActual">
+          </mat-form-field>
+        </p>
+      </div>
+      <div>
+        <h2>Saldo En Extracto Bancario</h2>
+        <p>
+          <mat-form-field class="example-full-width1" appearance="fill">
+            <mat-label>Saldo En Extracto Bancario</mat-label>
+            <textarea matInput formControlName="extrato"></textarea>
+            <div class="alert-danger" *ngIf="extrato.invalid && (extrato.dirty || extrato.touched)">
+              <div class="container-error-message" *ngIf="extrato.errors?.required">
+                Saldo en extracto bancario requerida.
+              </div>
+              <div class="container-error-message"
+                *ngIf="(extrato.dirty || extrato.touched) && extrato.invalid && extrato.errors?.pattern">
+                Ingrese un formato válido.
+              </div>
+            </div>
+          </mat-form-field>
+        </p>
+      </div>
+    </div>
+  </form>
+</mat-card>
+
+
+<mat-card class="card sombra">
+
+  <form class="example-form-Ecuacion" [formGroup]="panel2">
+    <div class="container">
+      <div>
+        <h3>Saldo Última Conciliación</h3>
+        <p>
+          <mat-form-field class="example-full-width11" appearance="fill">
+            <mat-label>Saldo Ultima Conciliación</mat-label>
+            <textarea matInput disabled formControlName='ultimaConciliacion'></textarea>
+          </mat-form-field>
+        </p>
+      </div>
+      <div class="example-tab-icon">
+        <mat-icon><img src="https://www.svgrepo.com/show/15392/plus.svg"></mat-icon>
+      </div>
+      <div>
+        <h3>Ingresos</h3>
+        <p>
+          <mat-form-field class="example-full-width11" appearance="fill">
+            <mat-label>Ingreso</mat-label>
+            <textarea matInput type="text" [disabled]="true" formControlName="ingreso"></textarea>
+          </mat-form-field>
+        </p>
+      </div>
+      <div>
+        <mat-icon class="example-tab-icon"><img src="https://www.svgrepo.com/show/264899/minus.svg"></mat-icon>
+      </div>
+      <div>
+
+        <h3>Egresos</h3>
+        <p>
+
+          <mat-form-field class="example-full-width11" appearance="fill">
+            <mat-label>Egresos</mat-label>
+            <textarea matInput disabled formControlName="gasto"></textarea>
+          </mat-form-field>
+        </p>
+      </div>
+
+    </div>
+    <div class="container22">
+
+      <div>
+        <h3>Saldo Final</h3>
+        <p>
+          <mat-form-field class="example-full-width11" appearance="fill">
+            <mat-label>Saldo Final</mat-label>
+            <textarea matInput disabled formControlName="saldoFinal"></textarea>
+          </mat-form-field>
+        </p>
+      </div>
+      <div>
+        <h3>Diferencia Con Extracto</h3>
+        <p>
+          <mat-form-field class="example-full-width11" appearance="fill">
+            <mat-label>Diferencia Con Extracto</mat-label>
+            <textarea matInput disabled formControlName="diferencia"></textarea>
+          </mat-form-field>
+        </p>
+      </div>
+    </div>
+  </form>
+</mat-card>
+
+<form [formGroup]="panel3">
+  <mat-card class="card sombra">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="id_movim">
+        <mat-header-cell *matHeaderCellDef> Número </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.id_movim}} </mat-cell>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="fecha_movim">
+        <mat-header-cell *matHeaderCellDef> Fecha Creación </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.fecha_movim}} </mat-cell>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="id_tipo_mov">
+        <mat-header-cell *matHeaderCellDef> Tipo </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{tipo(element.id_tipo_mov)}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="total_movim">
+        <mat-header-cell *matHeaderCellDef> Monto </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.total_movim | currency: ' COP '}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="acciones">
+        <mat-header-cell *matHeaderCellDef style="text-align: center;">Conciliar</mat-header-cell>
+        <mat-cell *matCellDef="let element" style="text-align: center;">
+          <button (click)="conciliarMov(element, $event)">Conciliar</button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </mat-card>
+</form>
+<mat-card class="enviar sombra">
+
+  <a href="http://localhost:4200/admin"><input class="boton1" type="button" value="Volver al Menú"> </a>
+  <input class="boton1" type="submit" value="Conciliar" (click)="conciliar()">
+
+</mat-card>

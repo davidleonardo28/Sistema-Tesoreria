@@ -1,0 +1,122 @@
+<div class="contenedor-tabla">
+
+    <body>
+        <mat-tab-group animationDuration="1000ms">
+            <mat-tab>
+                <ng-template mat-tab-label>
+                    <mat-icon class="example-tab-icon"><img src="https://www.svgrepo.com/show/17679/user.svg" />
+                    </mat-icon>
+                    <span class="ver">Ver Usuarios</span>
+                </ng-template>
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+
+                    <ng-container matColumnDef="id_emp">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" class="nameTable"> N° </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id_emp}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="nombres_emp">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" class="nameTable"> Nombres
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.nombres_emp}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="apellidos_emp">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" class="nameTable"> Apellidos
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.apellidos_emp}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="num_id_emp">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" class="nameTable"> Número de
+                            Identificación </th>
+                        <td mat-cell *matCellDef="let element"> {{element.num_id_emp}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="correo_emp">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" class="nameTable"> Correo
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.correo_emp}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="sexo_emp">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" class="nameTable"> Sexo </th>
+                        <td mat-cell *matCellDef="let element"> {{element.sexo_emp}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="telefono_emp">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" class="nameTable"> Teléfono
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.telefono_emp}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="id_nivel">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" class="nameTable"> Nivel </th>
+                        <td mat-cell *matCellDef="let element"> {{nivel(element.id_nivel)}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="id_fun">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" class="nameTable">
+                            Funcionalidad </th>
+                        <td mat-cell *matCellDef="let element"> {{funcionalidad(element.id_fun)}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="estado_emp">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" class="nameTable"> Estado
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{estado(element.estado_emp)}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="contrasena_emp">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" class="nameTable"> Contraseña
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.contrasena_emp}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="tipo_documento_emp">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" class="nameTable"> Tipo
+                            Documento </th>
+                        <td mat-cell *matCellDef="let element"> {{element.tipo_documento_emp}} </td>
+                    </ng-container>
+
+
+                    <ng-container matColumnDef="acciones">
+                        <th mat-header-cell *matHeaderCellDef style="text-align: center;" class="nameTable"> Acción
+                        </th>
+                        <td mat-cell *matCellDef="let element" style="text-align: center;">
+                            <button (click)="actualizar(element)" type="submit" [disabled]="element.estado_emp"
+                                style="margin-top: 10px">Desbloquear</button>
+                            <button (click)="bloquear(element)" type="submit" [disabled]="!element.estado_emp"
+                                style="margin-top: 10px; margin-bottom: 10px;">Bloquear</button>
+                        </td>
+                    </ng-container>
+
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+            </mat-tab>
+
+
+
+        </mat-tab-group>
+        <div>
+            <button class="botones boton">
+                <span> <a class="volver">
+                        <input type="button" value="Generar un PDF" (click)="generarPDF()">
+                    </a> </span>
+            </button>
+        </div>
+        <div>
+            <button class="botones boton">
+                <mat-icon><img src="https://www.svgrepo.com/show/33860/list.svg"> </mat-icon>
+                <span><a class="volver" href="http://localhost:4200/admin">Volver al Menu</a></span>
+            </button>
+        </div>
+    </body>
